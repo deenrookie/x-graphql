@@ -15,6 +15,10 @@
 使用方法：
 通过复制burpsuite的已经带有payload的内容到req.txt，再运行命令行即可。详情见下面使用实例。
 
+payload:
+`query IntrospectionQuery{__schema{queryType{name}mutationType{name}subscriptionType{name}types{...FullType}directives{name description locations args{...InputValue}}}}fragment FullType on __Type{kind name description fields(includeDeprecated:true){name description args{...InputValue}type{...TypeRef}isDeprecated deprecationReason}inputFields{...InputValue}interfaces{...TypeRef}enumValues(includeDeprecated:true){name description isDeprecated deprecationReason}possibleTypes{...TypeRef}}fragment InputValue on __InputValue{name description type{...TypeRef}defaultValue}fragment TypeRef on __Type{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name}}}}}}}}`
+
+
 ## 使用实例
 
 以腾讯某站点(gamer.qq.com)为例，将带有payload请求数据包复制进req.txt，如下：
