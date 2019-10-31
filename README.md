@@ -21,7 +21,7 @@ payload:
 
 ## 使用实例
 
-以腾讯某站点(gamer.qq.com)为例，将带有payload请求数据包复制进req.txt，如下：
+1. 以腾讯某站点(gamer.qq.com)为例，将带有payload请求数据包复制进req.txt，如下：
 
 ```
 POST /graphql/query HTTP/1.1
@@ -43,17 +43,17 @@ Accept-Language: zh-CN,zh;q=0.9,und;q=0.8,en;q=0.7,nl;q=0.6,zh-TW;q=0.5
 {"szQuery":"query IntrospectionQuery{__schema{queryType{name}mutationType{name}subscriptionType{name}types{...FullType}directives{name description locations args{...InputValue}}}}fragment FullType on __Type{kind name description fields(includeDeprecated:true){name description args{...InputValue}type{...TypeRef}isDeprecated deprecationReason}inputFields{...InputValue}interfaces{...TypeRef}enumValues(includeDeprecated:true){name description isDeprecated deprecationReason}possibleTypes{...TypeRef}}fragment InputValue on __InputValue{name description type{...TypeRef}defaultValue}fragment TypeRef on __Type{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name}}}}}}}}","tk":"ba55bdb71fa516278d2229b2920137c4"}
 ```
 
-再命令行执行`python main.py -u https://gamer.qq.com/graphql/query -d 'result'`
+2. 再命令行执行`python main.py -u https://gamer.qq.com/graphql/query -d 'result'`
 结果如下：
 ![image.png](https://ws1.sinaimg.cn/large/005IUN3mly1g8fjhnur6zj311i043js0.jpg)
 
-![image.png](https://ws1.sinaimg.cn/mw690/005IUN3mly1g8hr9rbj26j30mz17ddoa.jpg)
+![image.png](https://ws1.sinaimg.cn/mw690/005IUN3mly1g8hrcellvxj30c10r3juu.jpg)
 
 
 ## 问题
-当出现如下错误时，是因为脚本硬编码写死结果取的response的data参数
+当出现如下错误时，是因为脚本硬编码写死结果取的response的data参数，解决方法时添加-d参数。
 ![image.png](https://ws1.sinaimg.cn/large/005IUN3mly1g8fjlnjnt3j30va07ugmn.jpg)
 
-如gamer.qq.com，取的时response的result参数，所以需要添加-d参数。
+如gamer.qq.com，取的时response的result参数，所以需要添加-d参数值为result。
 
 ![image.png](https://ws1.sinaimg.cn/large/005IUN3mly1g8fjoelm67j31760damzh.jpg)
