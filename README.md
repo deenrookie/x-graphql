@@ -47,7 +47,7 @@ Accept-Language: zh-CN,zh;q=0.9,und;q=0.8,en;q=0.7,nl;q=0.6,zh-TW;q=0.5
 结果如下：
 ![image.png](https://ws1.sinaimg.cn/large/005IUN3mly1g8fjhnur6zj311i043js0.jpg)
 
-![image.png](https://ws1.sinaimg.cn/large/005IUN3mly1g8fjiaadehj30nj1gbgqh.jpg)
+![image.png](https://ws1.sinaimg.cn/large/005IUN3mly1g8fjiaadehj30nj1gbgqh.jpg=400px)
 
 
 ## 问题
